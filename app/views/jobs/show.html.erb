@@ -1,6 +1,28 @@
-<%= @job.title %>
-<%= @job.category %>
-<%= @job.company %>
-<%= @job.description %>
-<%= @job.location %>
-<%= link_to 'Voltar', root_path %>
+
+<h1> Emprego já </h1>
+
+<div>
+  <h1> <%= @job.title %> </h1>
+  <hr>
+  <table style="width:100%">
+    <tr>
+      <td> Empresa: </td>
+      <td><%= @job.company %></td>
+    </tr>
+    <tr>
+      <td> Localização:  </td>
+      <td><%= @job.location %></td>
+    </tr>
+    <tr>
+      <td> Categoria: </td>
+      <td><%= @job.category %></td>
+    </tr>
+    <tr>
+      <td> Descrição completa: </td>
+      <td><%= @job.description %></td>
+    </tr>
+  </table>
+  <br>
+  <%= link_to 'Voltar', root_path %>
+
+</div>
