@@ -14,7 +14,8 @@ class JobsController < ApplicationController
   def create
     @job = Job.create(job_params)
     # redirect_to({ action: :show, id: @job.id })
-    redirect_to job_path(@job.id)
+    # redirect_to job_path(@job.id)
+    redirect_to @job
   end
 
   private
