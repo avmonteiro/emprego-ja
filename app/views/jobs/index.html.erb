@@ -2,9 +2,12 @@
 
 <div>
   <% @jobs.each do |job| %>
-  <h1><%= link_to job.title, job %></h1>
-  <br>
-  <%= job.company %> - <%= job.location %>
-  <br>
+    <h1><%= link_to job.title, job %></h1>
+    <br>
+    <%= job.company %> - <%= job.location %>
+    <br>
+    <% if job.featured? %>
+      <strong> Destaque</strong>
+    <% end %>
   <% end %>
 </div>
