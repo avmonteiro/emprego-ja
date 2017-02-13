@@ -13,10 +13,14 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = Job.create(job_params)
-    # redirect_to({ action: :show, id: @job.id })
-    # redirect_to job_path(@job.id)
-    redirect_to @job
+    @job = Job.new(job_params)
+    if @job.save
+      redirect_to @job
+    else
+      @companies = Company.all
+      flash[:errors] = "Não foi possível criar a vaga"
+      render :new
+    end
   end
 
   private
