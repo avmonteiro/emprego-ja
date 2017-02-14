@@ -21,6 +21,23 @@ class JobsController < ApplicationController
       flash[:errors] = "Não foi possível criar a vaga"
       render :new
     end
+
+  end
+
+  def edit
+    @job = Job.find(params[:id])
+    @companies = Company.all
+  end
+
+  def update
+    @job = Job.find(params[:id])
+    if @job.update(job_params)
+      redirect_to @job
+    else
+      @companies = Company.all
+      flash[:errors] = "Não foi possível atualizar a vaga"
+      render :edit
+    end
   end
 
   private
