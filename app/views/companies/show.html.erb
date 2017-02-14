@@ -4,3 +4,9 @@
   <%= @company.mail %>
   <%= @company.phone %>
 </div>
+
+
+<div>
+  <%= render @jobs %>
+  <%= flash[:empty] %>
+</div>

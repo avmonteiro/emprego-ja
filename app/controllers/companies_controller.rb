@@ -6,6 +6,11 @@ class CompaniesController < ApplicationController
 
   def show
     @company = Company.find(params[:id])
+    @jobs = @company.jobs
+
+    if @jobs.empty?
+      flash[:empty] = "Nenhuma vaga disponível"
+    end
   end
 
   def create
