@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
     before_action :find, only: [:show, :update]
     before_action :fetch_companies, only: [:index, :new, :edit]
-    before_action :fetch_categories, only: [:new, :edit]
+    before_action :fetch_categories, only: [:index, :new, :edit]
 
   def index
     @jobs = Job.all
